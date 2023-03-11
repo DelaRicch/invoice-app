@@ -11,6 +11,7 @@ import { HomeNavComponent } from './home-nav/home-nav.component';
 import { HomeItemsComponent } from './home-items/home-items.component';
 import { FilterComponent } from './filter/filter.component';
 import { ClickOutsideDirective } from './click-outside.directive';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,15 +21,16 @@ import { ClickOutsideDirective } from './click-outside.directive';
     HomeNavComponent,
     HomeItemsComponent,
     FilterComponent,
-    ClickOutsideDirective
+    ClickOutsideDirective,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
