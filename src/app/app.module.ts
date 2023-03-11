@@ -9,6 +9,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeComponent } from './home/home.component';
 import { HomeNavComponent } from './home-nav/home-nav.component';
 import { HomeItemsComponent } from './home-items/home-items.component';
+import { FilterComponent } from './filter/filter.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HomeItemsComponent } from './home-items/home-items.component';
     NavBarComponent,
     HomeComponent,
     HomeNavComponent,
-    HomeItemsComponent
+    HomeItemsComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,

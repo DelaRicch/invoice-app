@@ -1,0 +1,61 @@
+@use "../../styles.scss" as styles;
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .left {
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      margin-bottom: 5px;
+    }
+
+    .invoice__number {
+      color: styles.$light-gray-purple;
+    }
+  }
+
+  .right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+
+    .add__btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 8px;
+      width: max-content;
+      background: styles.$purple;
+      border-radius: 24px;
+      width: max-content;
+      // width: 150px;
+      height: 48px;
+      cursor: pointer;
+
+      .invoice {
+        color: styles.$white;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: -0.25px;
+      }
+
+      .plus {
+        height: 32px;
+        width: 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: styles.$white;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<section class="container">
+  <div class="top" (click)="toggleFilter()">
+    <p class="filter">Filter by status</p>
+    <div class="arrow" [style.transform]="'rotate(' + rotateArrow + ')'">
+      <img src="../../assets/icon-arrow-down.svg" alt="arrow" />
+    </div>
+  </div>
+  <div class="down" *ngIf="isShown">
+    <mat-checkbox class="draft">Draft</mat-checkbox>
+    <mat-checkbox class="Pending">Pending</mat-checkbox>
+    <mat-checkbox class="Paid">Paid</mat-checkbox>
+  </div>
+</section>

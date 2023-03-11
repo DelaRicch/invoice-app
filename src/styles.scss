@@ -1,7 +1,6 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -20,13 +19,15 @@ $invoice-app-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$invoice-app-theme: mat.define-light-theme((
-  color: (
-    primary: $invoice-app-primary,
-    accent: $invoice-app-accent,
-    warn: $invoice-app-warn,
+$invoice-app-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $invoice-app-primary,
+      accent: $invoice-app-accent,
+      warn: $invoice-app-warn,
+    ),
   )
-));
+);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -34,6 +35,27 @@ $invoice-app-theme: mat.define-light-theme((
 @include mat.all-component-themes($invoice-app-theme);
 
 /* You can add global styles to this file, and also import other style files */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  list-style-type: none;
+  text-decoration: none;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "League Spartan", sans-serif;
+}
+
+$light-gray-purple: #888eb0;
+$purple: #7c5dfa;
+$white: #ffffff;
+$black: #0c0e16;

@@ -1,0 +1,33 @@
+@use "../../styles.scss" as styles;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+
+  .top {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    cursor: pointer;
+
+    .arrow {
+      transition: all 0.3s ease;
+    }
+  }
+
+  .down {
+    position: absolute;
+    width: 192px;
+    height: 128px;
+    left: -30px;
+    top: 30px;
+    background: styles.$white;
+    box-shadow: 0px 10px 20px rgba(72, 84, 159, 0.25);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 24px;
+  }
+}
