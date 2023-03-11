@@ -13,4 +13,9 @@ export class FilterComponent {
     this.isShown = !this.isShown;
     this.rotateArrow = this.isShown ? '180deg' : '0deg';
   }
+
+  clickedOutside() {
+    this.isShown = false;
+    this.rotateArrow = this.isShown ? '180deg' : '0deg';
+  }
 }

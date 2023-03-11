@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { HomeNavComponent } from './home-nav/home-nav.component';
 import { HomeItemsComponent } from './home-items/home-items.component';
 import { FilterComponent } from './filter/filter.component';
+import { ClickOutsideDirective } from './click-outside.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FilterComponent } from './filter/filter.component';
     HomeComponent,
     HomeNavComponent,
     HomeItemsComponent,
-    FilterComponent
+    FilterComponent,
+    ClickOutsideDirective
   ],
   imports: [
     BrowserModule,

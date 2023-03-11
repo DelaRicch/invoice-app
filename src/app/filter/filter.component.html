@@ -1,4 +1,4 @@
-<section class="container">
+<section class="container" clickOutside (clickOutside)="clickedOutside()">
   <div class="top" (click)="toggleFilter()">
     <p class="filter">Filter by status</p>
     <div class="arrow" [style.transform]="'rotate(' + rotateArrow + ')'">
