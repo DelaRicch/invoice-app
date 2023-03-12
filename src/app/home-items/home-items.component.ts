@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomeItemsComponent implements OnInit {
   jsonData: any;
+  capitalized: any;
   constructor(private http: HttpClient) {}
 
   ngOnInit() {

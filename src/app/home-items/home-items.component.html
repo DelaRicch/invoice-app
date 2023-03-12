@@ -8,7 +8,7 @@
     <p class="amount">{{ item.total | currency : "GBP" }}</p>
     <div class="status">
       <div class="circle"></div>
-      {{ item.status }}
+      {{ item.status | titlecase }}
     </div>
     <div class="arrow-right">
       <img src="../../assets/icon-arrow-right.svg" alt="" />

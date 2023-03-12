@@ -4,8 +4,7 @@ main {
   gap: 65px;
   width: 730px;
   margin-inline: auto;
-  padding-top: 72px;
-  padding-bottom: 20px;
+  padding-block: 72px;
 
   @media screen and (max-width: 768px) {
     width: 672px;
