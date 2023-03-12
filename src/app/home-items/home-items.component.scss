@@ -112,7 +112,6 @@
       .id__date {
         flex-direction: column;
         gap: 24px;
-        background: blue;
         align-items: flex-start;
 
         .id {
@@ -124,20 +123,17 @@
         margin-left: 0;
         // margin-top: 12px;
         text-align: right;
-        background: crimson;
         width: 100px;
         align-self: flex-start;
       }
 
       .amount__status {
-        background: green;
         margin: 0;
         margin-inline: auto;
         width: 92%;
         justify-content: space-between;
 
         .amount {
-          background: yellow;
           text-align: left;
         }
 
