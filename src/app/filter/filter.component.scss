@@ -6,23 +6,51 @@
   gap: 16px;
   position: relative;
 
+  @media screen and (max-width: 350px) {
+    margin-left: 25px;
+    margin-right: -20px;
+  }
+
   .top {
     display: flex;
     flex-direction: row;
     gap: 16px;
     cursor: pointer;
 
+    .filter {
+      font-style: normal;
+      font-weight: 700;
+      // font-size: 12px;
+      line-height: 15px;
+      letter-spacing: -0.25px;
+      color: styles.$black;
+    }
+
+    .filter:nth-of-type(2) {
+      display: none;
+    }
+
     .arrow {
       transition: all 0.3s ease;
+    }
+
+    @media screen and (max-width: 480px) {
+      .filter:nth-of-type(1) {
+        display: none;
+      }
+
+      .filter:nth-of-type(2) {
+        display: inline;
+      }
     }
   }
 
   .down {
     position: absolute;
-    width: 192px;
+    width: 190px;
     height: 128px;
     left: -30px;
-    top: 30px;
+    top: 40px;
     background: styles.$white;
     box-shadow: 0px 10px 20px rgba(72, 84, 159, 0.25);
     border-radius: 8px;

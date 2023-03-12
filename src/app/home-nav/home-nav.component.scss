@@ -22,6 +22,20 @@
     .invoice__number {
       color: styles.$light-gray-purple;
     }
+
+    .invoice__number:nth-of-type(2) {
+      display: none;
+    }
+
+    @media screen and (max-width: 480px) {
+      .invoice__number:nth-of-type(1) {
+        display: none;
+      }
+
+      .invoice__number:nth-of-type(2) {
+        display: inline;
+      }
+    }
   }
 
   .right {
@@ -39,7 +53,6 @@
       width: max-content;
       background: styles.$purple;
       border-radius: 24px;
-      width: max-content;
       width: 150px;
       height: 48px;
       cursor: pointer;
@@ -58,6 +71,13 @@
         letter-spacing: -0.25px;
       }
 
+      .invoice:nth-of-type(1) {
+        display: inline;
+      }
+      .invoice:nth-of-type(2) {
+        display: none;
+      }
+
       .plus {
         height: 32px;
         width: 32px;
@@ -66,6 +86,18 @@
         align-items: center;
         justify-content: center;
         background: styles.$white;
+      }
+
+      @media screen and (max-width: 480px) {
+        width: max-content;
+
+        .invoice:nth-of-type(1) {
+          display: none;
+        }
+
+        .invoice:nth-of-type(2) {
+          display: inline;
+        }
       }
     }
   }
