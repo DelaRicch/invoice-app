@@ -12,6 +12,7 @@ import { HomeItemsComponent } from './home-items/home-items.component';
 import { FilterComponent } from './filter/filter.component';
 import { ClickOutsideDirective } from './click-outside.directive';
 import { HttpClientModule } from '@angular/common/http';
+import { NoInvoiceComponent } from './no-invoice/no-invoice.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
     HomeItemsComponent,
     FilterComponent,
     ClickOutsideDirective,
+    NoInvoiceComponent,
   ],
   imports: [
     BrowserModule,

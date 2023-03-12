@@ -101,4 +101,13 @@
       }
     }
   }
+  @media screen and (max-width: 300px) {
+    flex-direction: column;
+
+    .left {
+      flex-direction: row;
+      gap: 2rem;
+      align-items: center;
+    }
+  }
 }
