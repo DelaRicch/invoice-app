@@ -21,12 +21,20 @@
       border-color: styles.$purple;
     }
 
+    .id__date {
+      display: flex;
+      gap: 35px;
+      width: 155px;
+      align-items: center;
+    }
+
     .id {
       color: styles.$light-purple;
       font-weight: 700;
       font-size: 12px;
       line-height: 15px;
       letter-spacing: -0.25px;
+      margin-left: -20px;
 
       span {
         color: styles.$black;
@@ -49,6 +57,13 @@
       line-height: 15px;
       letter-spacing: -0.25px;
       color: styles.$purple-dark;
+      margin-left: -35px;
+    }
+
+    .amount__status {
+      display: flex;
+      gap: 40px;
+      align-items: center;
     }
 
     .amount {
@@ -85,6 +100,59 @@
     .arrow-right {
       margin-right: -20px;
       width: 4px;
+    }
+
+    @media screen and (max-width: 480px) {
+      flex-wrap: wrap;
+      height: 134px;
+      justify-content: baseline;
+      padding: 24px;
+      margin-inline: auto;
+
+      .id__date {
+        flex-direction: column;
+        gap: 24px;
+        background: blue;
+        align-items: flex-start;
+
+        .id {
+          margin-left: 0;
+        }
+      }
+
+      .name {
+        margin-left: 0;
+        // margin-top: 12px;
+        text-align: right;
+        background: crimson;
+        width: 100px;
+        align-self: flex-start;
+      }
+
+      .amount__status {
+        background: green;
+        margin: 0;
+        margin-inline: auto;
+        width: 92%;
+        justify-content: space-between;
+
+        .amount {
+          background: yellow;
+          text-align: left;
+        }
+
+        .status {
+          margin: 0;
+        }
+      }
+
+      .arrow-right {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 350px) {
+      padding: 24px 12px;
     }
   }
 }

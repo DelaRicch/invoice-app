@@ -1,14 +1,18 @@
 <section class="container">
   <div class="item" *ngFor="let item of jsonData">
-    <p class="id">
-      #<span>{{ item.id }}</span>
-    </p>
-    <p class="date">{{ item.paymentDue }}</p>
+    <div class="id__date">
+      <p class="id">
+        #<span>{{ item.id }}</span>
+      </p>
+      <p class="date">Due {{ item.paymentDue | date : "dd MMM y" }}</p>
+    </div>
     <p class="name">{{ item.clientName }}</p>
-    <p class="amount">{{ item.total | currency : "GBP" }}</p>
-    <div class="status">
-      <div class="circle"></div>
-      {{ item.status | titlecase }}
+    <div class="amount__status">
+      <p class="amount">{{ item.total | currency : "GBP" }}</p>
+      <div class="status">
+        <div class="circle"></div>
+        {{ item.status | titlecase }}
+      </div>
     </div>
     <div class="arrow-right">
       <img src="../../assets/icon-arrow-right.svg" alt="" />
