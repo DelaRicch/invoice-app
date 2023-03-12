@@ -11,6 +11,12 @@
 
     .title {
       margin-bottom: 5px;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 36px;
+      letter-spacing: -1px;
+      color: styles.$black;
     }
 
     .invoice__number {
@@ -34,15 +40,20 @@
       background: styles.$purple;
       border-radius: 24px;
       width: max-content;
-      // width: 150px;
+      width: 150px;
       height: 48px;
       cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: #9277ff;
+      }
 
       .invoice {
         color: styles.$white;
         font-style: normal;
         font-weight: 700;
-        font-size: 12px;
+        // font-size: 12px;
         line-height: 15px;
         letter-spacing: -0.25px;
       }
