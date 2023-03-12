@@ -1,1 +1,14 @@
-<p>nav-bar works!</p>
+<section class="nav">
+  <div class="logo">
+    <div class="overlay"></div>
+    <img src="../../assets/logo.svg" alt="logo" />
+  </div>
+  <div class="darkmode__avatar">
+    <div class="toggle" (click)="toggleDarkMode()">
+      <img *ngIf="!isDarkMode" src="../../assets/icon-moon.svg" alt="moon" />
+      <img *ngIf="isDarkMode" src="../../assets/icon-sun.svg" alt="sun" />
+    </div>
+    <div class="line"></div>
+    <div class="avatar"></div>
+  </div>
+</section>
