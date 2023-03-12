@@ -1,0 +1,71 @@
+@use "../../styles.scss" as styles;
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 65px;
+  width: 730px;
+  margin-inline: auto;
+  padding-bottom: 72px;
+
+  @media screen and (max-width: 900px) {
+    width: 650px;
+    margin-right: 4%;
+  }
+  @media screen and (max-width: 768px) {
+    margin-right: 0;
+    padding-top: 32px;
+    width: 672px;
+    margin-inline: auto;
+  }
+
+  @media screen and (max-width: 560px) {
+    width: calc(100vw - 24px);
+  }
+
+  .container {
+    width: 242px;
+    height: 341px;
+    margin-inline: auto;
+
+    .text {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      text-align: center;
+      margin-top: 64px;
+
+      .nothing {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 22px;
+        color: styles.$black;
+      }
+
+      .create {
+        font-weight: 500;
+        line-height: 15px;
+        text-align: center;
+        letter-spacing: -0.25px;
+        color: styles.$light-gray-purple;
+
+        span {
+          font-weight: 700;
+        }
+      }
+
+      .create.mobile {
+        display: none;
+      }
+
+      @media screen and (max-width: 560px) {
+        .create {
+          display: none;
+        }
+        .create.mobile {
+          display: inline;
+        }
+      }
+    }
+  }
+}
