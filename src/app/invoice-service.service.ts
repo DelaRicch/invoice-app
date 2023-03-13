@@ -1,9 +1,19 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { OnInit } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class InvoiceServiceService {
+export class InvoiceServiceService implements OnInit {
+  jsonData: any;
+  capitalized: any;
 
-  constructor() { }
+  constructor(private http: HttpClient) {}
+
+  ngOnInit() {
+    this.http.get('../../assets/data.json').subscribe((data) => {
+      this.jsonData = data;
+    });
+  }
 }

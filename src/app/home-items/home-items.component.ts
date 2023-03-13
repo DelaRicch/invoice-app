@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -6,14 +6,6 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './home-items.component.html',
   styleUrls: ['./home-items.component.scss'],
 })
-export class HomeItemsComponent implements OnInit {
-  jsonData: any;
-  capitalized: any;
-  constructor(private http: HttpClient) {}
-
-  ngOnInit() {
-    this.http.get('../../assets/data.json').subscribe((data) => {
-      this.jsonData = data;
-    });
-  }
+export class HomeItemsComponent {
+  constructor() {}
 }
