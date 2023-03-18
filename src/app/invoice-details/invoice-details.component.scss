@@ -15,6 +15,8 @@ main {
   @media screen and (max-width: 768px) {
     padding-top: 32px;
     width: 672px;
+    margin: 0;
+    margin-inline: auto;
   }
 
   @media screen and (max-width: 560px) {
@@ -27,7 +29,6 @@ main {
 
     .go-back {
       display: flex;
-      // justify-content: space-between;
       gap: 23.6px;
       align-items: center;
       width: 81px;
@@ -120,6 +121,316 @@ main {
           @extend .delete-btn;
           background: styles.$purple;
           width: 131px;
+        }
+      }
+    }
+
+    .items-details {
+      margin-top: 24px;
+      padding: 32px;
+      background: styles.$white;
+      box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.100397);
+      border-radius: 8px;
+
+      &__top-section {
+        display: flex;
+        justify-content: space-between;
+
+        .id-description {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+
+          .id {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: -0.8px;
+            color: styles.$light-gray-purple;
+
+            span {
+              color: styles.$black;
+            }
+          }
+
+          .description {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 15px;
+            letter-spacing: -0.25px;
+            color: styles.$light-purple;
+          }
+        }
+
+        .address {
+          font-weight: 500;
+          font-size: 11px;
+          line-height: 18px;
+          text-align: right;
+          letter-spacing: -0.229167px;
+          color: styles.$light-purple;
+        }
+      }
+
+      &__middle-section {
+        margin-top: 21px;
+        width: 559px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        .date {
+          display: flex;
+          flex-direction: column;
+          gap: 32px;
+
+          .invoice-date {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            &__text {
+              font-weight: 500;
+              font-size: 12px;
+              line-height: 15px;
+              letter-spacing: -0.25px;
+              color: styles.$light-purple;
+            }
+
+            &__day {
+              font-weight: 700;
+              font-size: 15px;
+              line-height: 20px;
+              letter-spacing: -0.3125px;
+              color: styles.$black;
+            }
+          }
+
+          .payment-due {
+            @extend .invoice-date;
+
+            &__text {
+              font-weight: 500;
+              font-size: 12px;
+              line-height: 15px;
+              letter-spacing: -0.25px;
+              color: styles.$light-purple;
+            }
+
+            &__day {
+              font-weight: 700;
+              font-size: 15px;
+              line-height: 20px;
+              letter-spacing: -0.3125px;
+              color: styles.$black;
+            }
+          }
+        }
+
+        .recipient {
+          display: flex;
+          flex-direction: column;
+
+          &__title {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 15px;
+            letter-spacing: -0.25px;
+            color: styles.$light-purple;
+          }
+
+          &__name {
+            font-weight: 700;
+            font-size: 15px;
+            line-height: 20px;
+            letter-spacing: -0.3125px;
+            color: styles.$black;
+            margin-top: 12px;
+            margin-bottom: 8px;
+          }
+
+          &__address {
+            font-weight: 500;
+            font-size: 11px;
+            line-height: 18px;
+            letter-spacing: -0.229167px;
+            color: styles.$light-purple;
+          }
+        }
+
+        .email {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+
+          &__title {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 15px;
+            letter-spacing: -0.25px;
+            color: styles.$light-purple;
+          }
+
+          &__email-address {
+            font-weight: 700;
+            font-size: 15px;
+            line-height: 20px;
+            letter-spacing: -0.3125px;
+            color: styles.$black;
+          }
+        }
+      }
+
+      &__bottom-section {
+        display: flex;
+        flex-direction: column;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-top: 48px;
+
+        .details {
+          background: #f9fafe;
+          padding-top: 32px;
+          padding-inline: 32px;
+          padding-bottom: 40px;
+          display: flex;
+          flex-direction: column;
+          gap: 32px;
+
+          .item {
+            display: grid;
+            grid-template-columns: 50% 16% 16% 18%;
+
+            &__name {
+              display: flex;
+              flex-direction: column;
+              gap: 32px;
+
+              &__label {
+                font-weight: 500;
+                font-size: 11px;
+                line-height: 18px;
+                letter-spacing: -0.229167px;
+                color: styles.$light-purple;
+                display: none;
+              }
+
+              &__label:nth-of-type(1) {
+                display: inline;
+              }
+
+              &__name {
+                font-weight: 700;
+                font-size: 12px;
+                line-height: 15px;
+                letter-spacing: -0.25px;
+                color: styles.$black;
+              }
+            }
+
+            &__quantity {
+              display: flex;
+              flex-direction: column;
+              gap: 32px;
+
+              &__label {
+                font-weight: 500;
+                font-size: 11px;
+                line-height: 18px;
+                letter-spacing: -0.229167px;
+                color: styles.$light-purple;
+                display: none;
+              }
+
+              &__label:nth-of-type(1) {
+                display: inline;
+              }
+
+              &__quantity {
+                font-weight: 700;
+                font-size: 12px;
+                line-height: 15px;
+                letter-spacing: -0.25px;
+                color: styles.$light-purple;
+              }
+            }
+
+            &__price {
+              display: flex;
+              flex-direction: column;
+              gap: 32px;
+
+              &__label {
+                font-weight: 500;
+                font-size: 11px;
+                line-height: 18px;
+                letter-spacing: -0.229167px;
+                color: styles.$light-purple;
+                display: none;
+              }
+
+              &__label:nth-of-type(1) {
+                display: inline;
+              }
+
+              &__price {
+                font-weight: 700;
+                font-size: 12px;
+                line-height: 15px;
+                letter-spacing: -0.25px;
+                color: styles.$light-purple;
+              }
+            }
+
+            &__total {
+              display: flex;
+              flex-direction: column;
+              gap: 32px;
+
+              &__label {
+                font-weight: 500;
+                font-size: 11px;
+                line-height: 18px;
+                letter-spacing: -0.229167px;
+                color: styles.$light-purple;
+              }
+
+              &__total {
+                font-weight: 700;
+                font-size: 12px;
+                line-height: 15px;
+                letter-spacing: -0.25px;
+                color: styles.$black;
+              }
+            }
+          }
+        }
+
+        .grand-total {
+          padding-top: 24px;
+          padding-bottom: 24px;
+          padding-inline: 32px;
+          background: styles.$black-purple;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+
+          &__title {
+            font-weight: 500;
+            font-size: 11px;
+            line-height: 18px;
+            letter-spacing: -0.229167px;
+            color: styles.$white;
+          }
+
+          &__amount {
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 32px;
+            text-align: right;
+            letter-spacing: -0.5px;
+            color: styles.$white;
+          }
         }
       }
     }
