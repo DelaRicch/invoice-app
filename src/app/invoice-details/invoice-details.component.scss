@@ -19,7 +19,7 @@ main {
     margin-inline: auto;
   }
 
-  @media screen and (max-width: 560px) {
+  @media screen and (max-width: 600px) {
     width: calc(100vw - 24px);
   }
 
@@ -90,6 +90,12 @@ main {
             background: styles.$gold;
           }
         }
+
+        @media screen and (max-width: 600px) {
+          width: 100%;
+          gap: 0;
+          justify-content: space-between;
+        }
       }
 
       .actions {
@@ -121,6 +127,20 @@ main {
           @extend .delete-btn;
           background: styles.$purple;
           width: 131px;
+        }
+
+        @media screen and (max-width: 600px) {
+          position: fixed;
+          left: 0;
+          bottom: 0;
+          background: styles.$white;
+          width: 100vw;
+          height: 91px;
+          padding: 21px 5%;
+          margin: 0;
+          gap: 0;
+          justify-content: space-evenly;
+          box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.100397);
         }
       }
     }
@@ -169,6 +189,16 @@ main {
           text-align: right;
           letter-spacing: -0.229167px;
           color: styles.$light-purple;
+        }
+
+        @media screen and (max-width: 600px) {
+          flex-direction: column;
+          gap: 30px;
+          align-items: flex-start;
+
+          .address {
+            text-align: left;
+          }
         }
       }
 
@@ -278,6 +308,15 @@ main {
             color: styles.$black;
           }
         }
+
+        @media screen and (max-width: 600px) {
+          width: 100%;
+          grid-template-columns: repeat(2, 1fr);
+
+          .email {
+            margin-top: 32px;
+          }
+        }
       }
 
       &__bottom-section {
@@ -319,6 +358,10 @@ main {
                 line-height: 15px;
                 letter-spacing: -0.25px;
                 color: styles.$black;
+              }
+
+              .quantity-price-mobile {
+                display: none;
               }
             }
 
@@ -395,6 +438,40 @@ main {
                 color: styles.$black;
               }
             }
+
+            @media screen and (max-width: 600px) {
+              &__name {
+                gap: 0;
+
+                &__label {
+                  display: none;
+                }
+
+                .quantity-price-mobile {
+                  display: flex;
+                  .quantity,
+                  .price {
+                    font-weight: 700;
+                    font-size: 12px;
+                    line-height: 15px;
+                    letter-spacing: -0.25px;
+                    color: styles.$light-purple;
+                  }
+                }
+              }
+
+              &__quantity,
+              &__price {
+                display: none;
+              }
+
+              &__total {
+                justify-content: center;
+                &__label {
+                  display: none;
+                }
+              }
+            }
           }
         }
 
@@ -426,6 +503,9 @@ main {
           }
         }
       }
+    }
+    @media screen and (max-width: 600px) {
+      margin-bottom: 56px;
     }
   }
 }
