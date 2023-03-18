@@ -14,6 +14,7 @@ import { ClickOutsideDirective } from './click-outside.directive';
 import { HttpClientModule } from '@angular/common/http';
 import { NoInvoiceComponent } from './no-invoice/no-invoice.component';
 import { InvoiceDetailsComponent } from './invoice-details/invoice-details.component';
+import { DeleteInvoiceComponent } from './delete-invoice/delete-invoice.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { InvoiceDetailsComponent } from './invoice-details/invoice-details.compo
     ClickOutsideDirective,
     NoInvoiceComponent,
     InvoiceDetailsComponent,
+    DeleteInvoiceComponent,
   ],
   imports: [
     BrowserModule,
