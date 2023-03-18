@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,6 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NoInvoiceComponent } from './no-invoice/no-invoice.component';
 import { InvoiceDetailsComponent } from './invoice-details/invoice-details.component';
 import { DeleteInvoiceComponent } from './delete-invoice/delete-invoice.component';
+import { CreateInvoiceComponent } from './create-invoice/create-invoice.component';
+import { InvoiceItemsComponent } from './invoice-items/invoice-items.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { DeleteInvoiceComponent } from './delete-invoice/delete-invoice.componen
     NoInvoiceComponent,
     InvoiceDetailsComponent,
     DeleteInvoiceComponent,
+    CreateInvoiceComponent,
+    InvoiceItemsComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +39,7 @@ import { DeleteInvoiceComponent } from './delete-invoice/delete-invoice.componen
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

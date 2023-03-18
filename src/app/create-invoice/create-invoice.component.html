@@ -1,0 +1,16 @@
+<div>
+  <div *ngFor="let div of divs" [id]="'div-' + div.id" class="div-container">
+    <label for="input1">Input 1:</label>
+    <input type="text" id="input1" [(ngModel)]="div.input1" />
+
+    <label for="input2">Input 2:</label>
+    <input type="text" id="input2" [(ngModel)]="div.input2" />
+
+    <label for="input3">Input 3:</label>
+    <input type="text" id="input3" [(ngModel)]="div.input3" />
+
+    <button (click)="deleteDiv(div.id)">Delete</button>
+  </div>
+
+  <button (click)="addDiv()">Add</button>
+</div>
