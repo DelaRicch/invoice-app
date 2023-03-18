@@ -13,6 +13,7 @@ import { FilterComponent } from './filter/filter.component';
 import { ClickOutsideDirective } from './click-outside.directive';
 import { HttpClientModule } from '@angular/common/http';
 import { NoInvoiceComponent } from './no-invoice/no-invoice.component';
+import { InvoiceDetailsComponent } from './invoice-details/invoice-details.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { NoInvoiceComponent } from './no-invoice/no-invoice.component';
     FilterComponent,
     ClickOutsideDirective,
     NoInvoiceComponent,
+    InvoiceDetailsComponent,
   ],
   imports: [
     BrowserModule,

@@ -11,6 +11,10 @@ export class InvoiceServiceService implements OnInit {
 
   constructor(private http: HttpClient) {}
 
+  getAllInvoice() {
+    return this.jsonData;
+  }
+
   ngOnInit() {
     this.http.get('../../assets/data.json').subscribe((data) => {
       this.jsonData = data;

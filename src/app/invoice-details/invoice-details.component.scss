@@ -1,0 +1,127 @@
+@use "../../styles.scss" as styles;
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 65px;
+  width: 730px;
+  margin-inline: auto;
+  padding-bottom: 72px;
+
+  @media screen and (max-width: 900px) {
+    width: 650px;
+    margin-right: 4%;
+  }
+  @media screen and (max-width: 768px) {
+    padding-top: 32px;
+    width: 672px;
+  }
+
+  @media screen and (max-width: 560px) {
+    width: calc(100vw - 24px);
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+
+    .go-back {
+      display: flex;
+      // justify-content: space-between;
+      gap: 23.6px;
+      align-items: center;
+      width: 81px;
+      height: 15px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+
+      p {
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: -0.25px;
+        color: styles.$black;
+      }
+    }
+
+    .status__container {
+      height: 88px;
+      background: styles.$white;
+      box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.100397);
+      border-radius: 8px;
+      margin-top: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-inline: 32px;
+
+      .status {
+        width: 159px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        &__text {
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 15px;
+          letter-spacing: -0.25px;
+          color: styles.$purple-dark;
+        }
+
+        &__details {
+          width: 104px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          background: rgba(255, 145, 0, 0.06);
+          color: styles.$gold;
+          height: 100%;
+          border-radius: 6px;
+
+          .circle {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: styles.$gold;
+          }
+        }
+      }
+
+      .actions {
+        display: flex;
+        gap: 8px;
+        height: 48px;
+
+        .edit-btn {
+          width: 73px;
+          background: #f9fafe;
+          border: none;
+          border-radius: 24px;
+          font-weight: 700;
+          font-size: 12px;
+          line-height: 15px;
+          letter-spacing: -0.25px;
+          color: styles.$light-purple;
+          cursor: pointer;
+        }
+
+        .delete-btn {
+          @extend .edit-btn;
+          background: styles.$red;
+          color: styles.$white;
+          width: 89px;
+        }
+
+        .paid-btn {
+          @extend .delete-btn;
+          background: styles.$purple;
+          width: 131px;
+        }
+      }
+    }
+  }
+}
