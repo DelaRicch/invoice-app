@@ -66,8 +66,23 @@ main {
         }
       }
 
+      // Scroll button styles
+      &::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #dfe3fa;
+        border-radius: 4px;
+        transition: styles.$transition;
+      }
+
       .content {
-        width: 95%;
+        width: 94%;
         background: blue;
 
         .bill-to {
@@ -138,6 +153,12 @@ main {
           background: yellow;
           margin-top: 48px;
 
+          .date,
+          .payment {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+          }
           mat-form-field {
             border: none;
             padding: 0;
@@ -159,6 +180,7 @@ main {
           display: flex;
           flex-direction: column;
           margin-top: 24px;
+          gap: 10px;
         }
       }
       .overlay {
@@ -181,9 +203,42 @@ main {
       height: 15vh;
       width: calc(50vw - 20%);
       background: green;
-      // height: 70vh;
       margin-left: 20%;
-      // overflow-y: scroll;
+      display: flex;
+      align-items: center;
+
+      .buttons {
+        background: blue;
+        display: flex;
+        gap: 8px;
+        width: 92%;
+
+        button {
+          height: 48px;
+          width: 96px;
+          border: none;
+          border-radius: 24px;
+          background: #f9fafe;
+          font-weight: 700;
+          font-size: 12px;
+          line-height: 15px;
+          letter-spacing: -0.25px;
+          color: styles.$light-purple;
+        }
+
+        button.draft {
+          margin-left: 26%;
+          background: styles.$black-purple;
+          color: styles.$light-gray-purple;
+          width: 133px;
+        }
+
+        button.send {
+          width: 128px;
+          background: styles.$purple;
+          color: styles.$white;
+        }
+      }
     }
   }
 }
