@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 interface ItemDiv {
   id: number;
@@ -15,6 +15,16 @@ interface ItemDiv {
 })
 export class InvoiceItemsComponent {
   items: ItemDiv[] = [];
+  isDesktop: boolean = true;
+
+  constructor() {
+    this.checkWindowSize();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  checkWindowSize() {
+    this.isDesktop = window.innerWidth >= 768;
+  }
 
   addItem() {
     const newItem: ItemDiv = {
@@ -29,5 +39,9 @@ export class InvoiceItemsComponent {
 
   deleteItem(id: number) {
     this.items = this.items.filter((item) => item.id !== id);
+  }
+
+  calculateTotal(item: ItemDiv) {
+    item.total = item.price * item.quantity;
   }
 }

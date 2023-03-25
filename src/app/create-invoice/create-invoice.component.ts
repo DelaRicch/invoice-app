@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
-
-interface Div {
-  id: number;
-  input1: string;
-  input2: string;
-  input3: string;
+import { FormControl, FormGroup } from '@angular/forms';
+interface PaymentTerms {
+  value: string;
+  viewValue: string;
 }
 
 @Component({
@@ -13,19 +11,22 @@ interface Div {
   styleUrls: ['./create-invoice.component.scss'],
 })
 export class CreateInvoiceComponent {
-  divs: Div[] = [];
+  dateForm = FormGroup;
+  nextDate: string = '';
 
-  addDiv() {
-    const newDiv: Div = {
-      id: this.divs.length + 1,
-      input1: '',
-      input2: '',
-      input3: '',
-    };
-    this.divs.push(newDiv);
-  }
+  date = new FormControl(new Date());
+  today = new Date();
 
-  deleteDiv(id: number) {
-    this.divs = this.divs.filter((div) => div.id !== id);
-  }
+  // Payment Terms
+  termsVal: PaymentTerms[] = [
+    { value: '1', viewValue: 'Net 1 Day' },
+    { value: '7', viewValue: 'Net 7 Days' },
+    { value: '14', viewValue: 'Net 14 Days' },
+    { value: '30', viewValue: 'Net 30 Days' },
+  ];
+
+  termsControl = new FormControl(this.termsVal[3].value);
+  form = new FormGroup({
+    terms: this.termsControl,
+  });
 }

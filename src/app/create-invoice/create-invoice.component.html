@@ -1,16 +1,109 @@
-<div>
-  <div *ngFor="let div of divs" [id]="'div-' + div.id" class="div-container">
-    <label for="input1">Input 1:</label>
-    <input type="text" id="input1" [(ngModel)]="div.input1" />
+<main>
+  <app-nav-bar></app-nav-bar>
 
-    <label for="input2">Input 2:</label>
-    <input type="text" id="input2" [(ngModel)]="div.input2" />
+  <section class="container">
+    <div class="invoice-title">
+      <h2>New Invoice</h2>
+    </div>
+    <form [formGroup]="form">
+      <div class="content">
+        <section class="bill-to">
+          <p class="title">Bill To</p>
+          <div class="bill-to__client-address">
+            <label for="client-street">Client Address</label>
+            <input
+              type="text"
+              placeholder="19 Union Terrace"
+              id="client-street"
+            />
+          </div>
+          <div class="bill-to__city-post-country">
+            <div class="bill-to__city-post-country__city">
+              <label for="city">City</label>
+              <input type="text" id="city" placeholder="London" />
+            </div>
+            <div class="bill-to__city-post-country__post">
+              <label for="post-code">Post Code</label>
+              <input type="text" id="post-code" placeholder="E13EZ" />
+            </div>
+            <div class="bill-to__city-post-country__country">
+              <label for="country">Country</label>
+              <input type="text" id="country" placeholder="Country" />
+            </div>
+          </div>
+        </section>
 
-    <label for="input3">Input 3:</label>
-    <input type="text" id="input3" [(ngModel)]="div.input3" />
-
-    <button (click)="deleteDiv(div.id)">Delete</button>
-  </div>
-
-  <button (click)="addDiv()">Add</button>
-</div>
+        <section class="bill-from">
+          <div class="bill-from__client-name">
+            <label for="client-name">Client Name</label>
+            <input type="text" id="client-name" placeholder="Alex Grim" />
+          </div>
+          <div class="bill-from__client-email">
+            <label for="client-email">Client's Email</label>
+            <input
+              type="text"
+              id="client-email"
+              placeholder="alexgrim@gmail.com"
+            />
+          </div>
+          <div class="bill-from__sender-street">
+            <label for="sender-street">Sender Street</label>
+            <input type="text" id="sender-street" placeholder="84 Church Way" />
+          </div>
+          <div class="bill-from__city-post-country">
+            <div class="bill-from__city-post-country__city">
+              <label for="city">City</label>
+              <input type="text" id="city" placeholder="London" />
+            </div>
+            <div class="bill-from__city-post-country__post">
+              <label for="post-code">Post Code</label>
+              <input type="text" id="post-code" placeholder="E13EZ" />
+            </div>
+            <div class="bill-from__city-post-country__country">
+              <label for="country">Country</label>
+              <input type="text" id="country" placeholder="Country" />
+            </div>
+          </div>
+        </section>
+        <section class="date-payment">
+          <div class="date">
+            <label for="date">Invoice Date</label>
+            <mat-form-field id="date" class="date-form" appearance="fill">
+              <input
+                matInput
+                [matDatepicker]="datePicker"
+                [value]="date.value"
+                [min]="today"
+                disabled
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="datePicker"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #datePicker disabled="false"></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="payment">
+            <label for="payment">Payment Terms</label>
+            <mat-form-field appearance="fill">
+              <mat-select [formControl]="termsControl" name="terms">
+                <mat-option
+                  [value]="term.value"
+                  *ngFor="let term of termsVal"
+                  >{{ term.viewValue }}</mat-option
+                >
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </section>
+        <section class="description">
+          <label for="desc">Project Description</label>
+          <input type="text" id="dec" placeholder="Graphic Design" />
+        </section>
+        <app-invoice-items></app-invoice-items>
+      </div>
+      <div class="overlay"></div>
+    </form>
+    <section class="actions-section"></section>
+  </section>
+</main>

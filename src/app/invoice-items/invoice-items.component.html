@@ -1,1 +1,55 @@
-<p>invoice-items works!</p>
+<section class="item-section">
+  <p class="item-title">Item List</p>
+  <div
+    *ngFor="let item of items; let i = index"
+    [id]="'div-' + item.id"
+    class="item-container"
+  >
+    <section class="item-name">
+      <label for="name" *ngIf="!isDesktop || i === 0">Item Name</label>
+      <input type="text" id="name" [(ngModel)]="item.itemName" />
+    </section>
+
+    <section class="item-quantity">
+      <label for="quantity" *ngIf="!isDesktop || i === 0">Qty.</label>
+      <input
+        type="text"
+        id="quantity"
+        [(ngModel)]="item.quantity"
+        (input)="calculateTotal(item)"
+      />
+    </section>
+
+    <section class="item-price">
+      <label for="price" *ngIf="!isDesktop || i === 0">Price</label>
+      <input
+        type="text"
+        id="price"
+        [(ngModel)]="item.price"
+        (input)="calculateTotal(item)"
+      />
+    </section>
+
+    <section class="item-total">
+      <label for="total" *ngIf="!isDesktop || i === 0">Total</label>
+      <div class="total-down">
+        <p id="total">{{ item.total | number : "1.2-2" }}</p>
+        <svg
+          (click)="deleteItem(item.id)"
+          class="delete-item"
+          width="13"
+          height="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M11.583 3.556v10.666c0 .982-.795 1.778-1.777 1.778H2.694a1.777 1.777 0 01-1.777-1.778V3.556h10.666zM8.473 0l.888.889h3.111v1.778H.028V.889h3.11L4.029 0h4.444z"
+            fill="#888EB0"
+            fill-rule="nonzero"
+          />
+        </svg>
+      </div>
+    </section>
+  </div>
+
+  <button class="add-item-btn" (click)="addItem()">+ Add New Item</button>
+</section>
