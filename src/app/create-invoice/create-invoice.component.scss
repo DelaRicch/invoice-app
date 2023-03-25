@@ -13,10 +13,19 @@ main {
     border-radius: 0px 20px 20px 0px;
     overflow: hidden;
 
+    @media screen and (max-width: 900px) {
+      width: 85vw;
+    }
+
     .invoice-title {
       padding-top: 56px;
       height: 15vh;
       background: yellow;
+      margin-left: 20%;
+
+      // @media screen and (max-width: 900px) {
+
+      // }
 
       h2 {
         font-weight: 700;
@@ -24,7 +33,6 @@ main {
         line-height: 32px;
         letter-spacing: -0.5px;
         color: styles.$black;
-        margin-left: 20%;
       }
     }
 
@@ -82,7 +90,7 @@ main {
       }
 
       .content {
-        width: 94%;
+        width: 95%;
         background: blue;
 
         .bill-to {
@@ -105,7 +113,8 @@ main {
           }
 
           &__city-post-country {
-            display: flex;
+            display: grid;
+            grid-template-columns: 30.2% 30% 30.5%;
             gap: 24px;
 
             &__city,
@@ -114,7 +123,7 @@ main {
               display: flex;
               flex-direction: column;
               gap: 10px;
-              width: 152px;
+              background: green;
             }
           }
         }
@@ -133,7 +142,8 @@ main {
           }
 
           &__city-post-country {
-            display: flex;
+            display: grid;
+            grid-template-columns: 30.2% 30% 30.5%;
             gap: 24px;
 
             &__city,
@@ -142,13 +152,13 @@ main {
               display: flex;
               flex-direction: column;
               gap: 10px;
-              width: 152px;
             }
           }
         }
 
         .date-payment {
-          display: flex;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
           gap: 24px;
           background: yellow;
           margin-top: 48px;
@@ -164,7 +174,7 @@ main {
             padding: 0;
             height: 70px;
             background: green;
-            width: 240px;
+            // width: 240px;
 
             input {
               margin: 0 !important;
@@ -196,6 +206,14 @@ main {
         left: 0;
         bottom: 0;
         z-index: 5;
+      }
+
+      @media screen and (max-width: 900px) {
+        // width: calc(50vw - 20%);
+        width: calc(85vw - 20%);
+        background: red;
+        // padding-top: 24px;
+        margin-left: 20%;
       }
     }
 
@@ -238,6 +256,13 @@ main {
           background: styles.$purple;
           color: styles.$white;
         }
+      }
+
+      @media screen and (max-width: 900px) {
+        // width: calc(50vw - 20%);
+        width: calc(85vw - 20%);
+        // padding-top: 24px;
+        margin-left: 20%;
       }
     }
   }
