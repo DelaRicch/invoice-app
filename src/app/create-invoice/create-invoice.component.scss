@@ -16,6 +16,16 @@ main {
     @media screen and (max-width: 900px) {
       width: 85vw;
     }
+    @media screen and (max-width: 768px) {
+      height: calc(100vh - 80px);
+      position: absolute;
+      bottom: 0;
+    }
+
+    @media screen and (max-width: 600px) {
+      width: 100vw;
+      border-radius: 0px;
+    }
 
     .invoice-title {
       padding-top: 56px;
@@ -23,9 +33,18 @@ main {
       background: yellow;
       margin-left: 20%;
 
-      // @media screen and (max-width: 900px) {
+      @media screen and (max-width: 768px) {
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        padding-top: 0;
+        margin-left: 10%;
+      }
 
-      // }
+      @media screen and (max-width: 600px) {
+        width: 92vw;
+        margin-inline: auto;
+      }
 
       h2 {
         font-weight: 700;
@@ -76,6 +95,8 @@ main {
 
       // Scroll button styles
       &::-webkit-scrollbar {
+        position: absolute;
+        right: 32px;
         width: 8px;
       }
 
@@ -86,7 +107,6 @@ main {
       &::-webkit-scrollbar-thumb {
         background: #dfe3fa;
         border-radius: 4px;
-        transition: styles.$transition;
       }
 
       .content {
@@ -215,6 +235,47 @@ main {
         // padding-top: 24px;
         margin-left: 20%;
       }
+
+      @media screen and (max-width: 768px) {
+        width: calc(95vw - 20%);
+        margin-left: 10%;
+      }
+      @media screen and (max-width: 600px) {
+        width: 92vw;
+        margin-inline: auto;
+        .content {
+          .bill-to {
+            &__city-post-country {
+              grid-template-columns: 46% 46%;
+              grid-auto-flow: row;
+
+              &__country {
+                width: 86vw;
+                background: red;
+              }
+            }
+          }
+
+          .bill-from {
+            &__city-post-country {
+              grid-template-columns: 46% 46%;
+              grid-auto-flow: row;
+
+              &__country {
+                width: 86vw;
+                background: red;
+              }
+            }
+          }
+          .date-payment {
+            grid-template-columns: 100%;
+          }
+        }
+
+        .overlay {
+          height: 64px;
+        }
+      }
     }
 
     .actions-section {
@@ -263,6 +324,37 @@ main {
         width: calc(85vw - 20%);
         // padding-top: 24px;
         margin-left: 20%;
+      }
+
+      @media screen and (max-width: 768px) {
+        width: calc(95vw - 20%);
+        margin-left: 10%;
+        background: yellow;
+
+        .buttons {
+          width: 95%;
+          margin-bottom: 1.5rem;
+
+          button.draft {
+            margin-left: 33%;
+          }
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+        height: 20vh;
+        margin: 0;
+        width: 92vw;
+        margin-inline: auto;
+        align-items: flex-start;
+
+        .buttons {
+          margin: 0;
+
+          button.draft {
+            margin: 0;
+          }
+        }
       }
     }
   }
