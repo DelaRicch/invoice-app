@@ -30,7 +30,6 @@ main {
     .invoice-title {
       padding-top: 56px;
       height: 15vh;
-      background: yellow;
       margin-left: 20%;
 
       @media screen and (max-width: 768px) {
@@ -58,7 +57,6 @@ main {
     form {
       position: relative;
       width: calc(50vw - 20%);
-      background: red;
       height: 70vh;
       padding-top: 24px;
       margin-left: 20%;
@@ -111,7 +109,6 @@ main {
 
       .content {
         width: 95%;
-        background: blue;
 
         .bill-to {
           margin-bottom: 48px;
@@ -143,7 +140,6 @@ main {
               display: flex;
               flex-direction: column;
               gap: 10px;
-              background: green;
             }
           }
         }
@@ -180,7 +176,6 @@ main {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
           gap: 24px;
-          background: yellow;
           margin-top: 48px;
 
           .date,
@@ -193,14 +188,11 @@ main {
             border: none;
             padding: 0;
             height: 70px;
-            background: green;
-            // width: 240px;
 
             input {
               margin: 0 !important;
               padding: 0 !important;
               border: none !important;
-              background: crimson;
               height: 25px !important;
             }
           }
@@ -221,7 +213,6 @@ main {
           rgba(0, 0, 0, 0.0001) 0%,
           rgba(0, 0, 0, 0.1) 100%
         );
-        // background: yellow;
         position: sticky;
         left: 0;
         bottom: 0;
@@ -229,10 +220,7 @@ main {
       }
 
       @media screen and (max-width: 900px) {
-        // width: calc(50vw - 20%);
         width: calc(85vw - 20%);
-        background: red;
-        // padding-top: 24px;
         margin-left: 20%;
       }
 
@@ -251,7 +239,6 @@ main {
 
               &__country {
                 width: 86vw;
-                background: red;
               }
             }
           }
@@ -263,7 +250,6 @@ main {
 
               &__country {
                 width: 86vw;
-                background: red;
               }
             }
           }
@@ -281,13 +267,11 @@ main {
     .actions-section {
       height: 15vh;
       width: calc(50vw - 20%);
-      background: green;
       margin-left: 20%;
       display: flex;
       align-items: center;
 
       .buttons {
-        background: blue;
         display: flex;
         gap: 8px;
         width: 92%;
@@ -322,14 +306,12 @@ main {
       @media screen and (max-width: 900px) {
         // width: calc(50vw - 20%);
         width: calc(85vw - 20%);
-        // padding-top: 24px;
         margin-left: 20%;
       }
 
       @media screen and (max-width: 768px) {
         width: calc(95vw - 20%);
         margin-left: 10%;
-        background: yellow;
 
         .buttons {
           width: 95%;
